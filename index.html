@@ -29,10 +29,6 @@
             margin-bottom: 20px;
         }
         
-        h2{
-
-          color: #00143f;  
-        }
         /* ===== FORM STYLES ===== */
         .form-group {
             margin-bottom: 15px;
@@ -90,7 +86,26 @@
         }
         
         /* ===== SIGNATURE PREVIEW STYLES ===== */
-  /* ----- Ajustes ESPECÍFICOS para la firma ----- */
+       /* ===== RESPONSIVE STYLES ===== */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        padding: 15px;
+    }
+    
+    .two-columns {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    button {
+        padding: 10px 15px;
+    }
+    
+    /* ----- Ajustes ESPECÍFICOS para la firma ----- */
     #signaturePreview table {
         width: 100% !important;
     }
@@ -142,28 +157,6 @@
   #signaturePreview * {
     color: #00143f !important; /* Fuerza el color en TODOS los elementos */
 }  
-
-
-
-       /* ===== RESPONSIVE STYLES ===== */
-@media (max-width: 768px) {
-    body {
-        padding: 10px;
-    }
-    
-    .container {
-        padding: 15px;
-    }
-    
-    .two-columns {
-        flex-direction: column;
-        gap: 10px;
-    }
-    
-    button {
-        padding: 10px 15px;
-    }
-    
 }
     
 
@@ -272,14 +265,10 @@
                                 </span>
                             </td>
                             <td style="vertical-align: middle;">
-
-
-                                <h2 style="all: unset; display: block; font-family: Arial; margin: 0; color: #00143f !important;">
-    <span style="display: block; color: inherit !important; font-size: 18px; font-weight: 600; margin-bottom: 3px;">${name}</span>
-    ${pronouns ? `<span style="display: block; color: inherit !important; font-size: 14px; font-weight: normal; margin-bottom: 5px;">${pronouns}</span>` : ''}
+                                <h2>
+    <span>${name}</span>
+    ${pronouns ? `<span>${pronouns}</span>` : ''}
 </h2>
-
-
                                 <p style="margin: 5px 0 0 0; color: #00143f; font-size: 14px; line-height: 1.4;">
                                     <span>${position}</span>
                                 </p>
