@@ -86,70 +86,64 @@
         }
         
         /* ===== SIGNATURE PREVIEW STYLES ===== */
-        .preview {
-            margin-top: 30px;
-            padding: 20px;
-            background-color: white;
-            border: 1px solid #eee;
-            overflow-x: auto;
-        }
-        
-        .signature-container {
-            display: inline-block;
-            min-width: 100%;
-            padding: 10px;
-            box-sizing: border-box;
-        }
-        
-        .copy-message {
-            color: green;
-            margin-left: 10px;
-            display: none;
-            font-size: 14px;
-        }
-        
-        /* ===== RESPONSIVE STYLES ===== */
-        @media (max-width: 768px) {
-            body {
-                padding: 10px;
-            }
-            
-            .container {
-                padding: 15px;
-            }
-            
-            .two-columns {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            button {
-                padding: 10px 15px;
-            }
-            
-            /* Signature preview adjustments */
-            #signaturePreview table {
-                width: 100% !important;
-            }
-            
-            #signaturePreview td {
-                display: block !important;
-                width: auto !important;
-                padding: 5px 0 !important;
-            }
-            
-            #signaturePreview .two-columns > div {
-                width: 100% !important;
-            }
-            
-            #signaturePreview img {
-                max-width: 100px !important;
-            }
-            
-            #signaturePreview .divider {
-                display: none !important;
-            }
-        }
+       /* ===== RESPONSIVE STYLES ===== */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        padding: 15px;
+    }
+    
+    .two-columns {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    button {
+        padding: 10px 15px;
+    }
+    
+    /* ----- Ajustes ESPECÍFICOS para la firma ----- */
+    #signaturePreview table {
+        width: 100% !important;
+    }
+    
+    #signaturePreview td {
+        display: block !important;
+        width: auto !important;
+        padding: 5px 0 !important;
+        min-width: auto !important;     /* Nueva línea */
+        white-space: nowrap !important; /* Nueva línea */
+    }
+    
+    #signaturePreview a {
+        word-break: keep-all !important; /* Nueva línea */
+    }
+    
+    #signaturePreview img {
+        max-width: 100px !important;
+    }
+    
+    #signaturePreview .divider {
+        display: none !important;
+    }
+
+    /* Ajuste para pronombres */
+        #signaturePreview h2 span {
+            display: block !important;
+            margin-bottom: 4px;
+
+        }  
+        #signaturePreview h2 span {
+        display: block !important;
+        margin-bottom: 3px !important;
+        color: #00143f !important; /* AZUL CORPORATIVO */
+        opacity: 1 !important; /* ELIMINA TRANSPARENCIA */
+    }
+
+}
     </style>
 </head>
 <body>
@@ -255,7 +249,8 @@
                             </td>
                             <td style="vertical-align: middle;">
                                 <h2 style="margin: 0; font-size: 18px; font-family: Arial; color: #00143f; font-weight: 600;">
-                                    <span style="display: inline-block; vertical-align: middle;">${name} ${pronouns}</span>
+                                    <span style="display: block;">${name}</span>
+<span style="display: block; font-size: 14px; color: #00143f;">${pronouns}</span>
                                 </h2>
                                 <p style="margin: 5px 0 0 0; color: #00143f; font-size: 14px; line-height: 1.4;">
                                     <span>${position}</span>
