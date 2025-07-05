@@ -130,35 +130,17 @@
         display: none !important;
     }
 
-    #signaturePreview h2 {
-    all: unset !important;
-    display: block !important;
-    font-family: Arial !important;
-    margin: 0 !important;
-    color: #00143f !important; /* Asegura que todo herede este color */
-}
+    /* Ajuste para pronombres */
 
-#signaturePreview h2 span {
-    color: inherit !important; /* Hereda el color del padre */
-    display: block !important;
-}
 
-#signaturePreview h2 span:first-child {
-    font-size: 18px !important;
-    font-weight: 600 !important;
-    margin-bottom: 3px !important;
-}
+        }  
+        #signaturePreview h2 span {
+        display: block !important;
+        margin-bottom: 3px !important;
+        color: #00143f !important; 
+        opacity: 1 !important; 
+    }
 
-#signaturePreview h2 span:nth-child(2) {
-    font-size: 14px !important;
-    font-weight: normal !important;
-    margin-bottom: 5px !important;
-}
-  #signaturePreview * {
-    color: #00143f !important; /* Fuerza el color en TODOS los elementos */
-}  
-}
-    
 
 
     </style>
@@ -265,9 +247,9 @@
                                 </span>
                             </td>
                             <td style="vertical-align: middle;">
-                                <h2>
-    <span>${name}</span>
-    ${pronouns ? `<span>${pronouns}</span>` : ''}
+                                <h2 style="margin: 0; font-size: 18px; font-family: Arial; color: #00143f; font-weight: 600;">
+    <span style="display: block; color: inherit !important;">${name}</span>
+    ${pronouns ? `<span style="display: block; font-size: 14px; color: inherit !important;">${pronouns}</span>` : ''}
 </h2>
                                 <p style="margin: 5px 0 0 0; color: #00143f; font-size: 14px; line-height: 1.4;">
                                     <span>${position}</span>
